@@ -1,6 +1,6 @@
 require "plugin.init"
-local packer = require 'packer'
 
+vim.cmd("colorscheme habamax")
 vim.opt.tabstop = 2
 vim.opt.shiftwidth =2
 vim.opt.number = true
@@ -10,6 +10,6 @@ vim.opt.relativenumber = false
 vim.opt.cursorcolumn = false
 vim.opt.showcmd = true
 vim.opt.ruler = true
-packer.init {
-	compile_path = require('packer.util').join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.lua')
-}
+
+require("mason").setup()
+

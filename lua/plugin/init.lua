@@ -1,6 +1,6 @@
 vim.cmd[[packadd packer.nvim]]
 
-require'packer'.startup(function()
+require'packer'.startup(function(use)
 	-- 起動時に読み込むプラグインは名前を書くだけです
 	use "tpope/vim-fugitive"
 	use "tpope/vim-repeat"
@@ -80,4 +80,17 @@ require'packer'.startup(function()
 	use {
 		"nvim-treesitter/nvim-treesitter"
 	}
+	use { "williamboman/mason.nvim" }
+	use { "preservim/nerdtree" }
+	use {
+		"neovim/nvim-lspconfig"
+	}
+	use {
+		"folke/neodev.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require "plugin/configs/neodev"
+		end,
+	}
+	use { "weilbith/nvim-code-action-menu" }
 end)
